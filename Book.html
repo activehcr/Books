@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Projects by Kris Shamloo">
+    <link rel="icon" type="image/png" href="assets/images/favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/images/favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/images/favicon96.png" sizes="96x96">
+    <title>Kris Shamloo</title>
+    <style type="text/css">
+:root {
+    --color: black;
+    --bg-color: white;
+    --a-color: black;
+    --a-hover: hotpink;
+    --bg-a-color: rgb(235, 235, 235);
+    --cell-border: rgb(218, 218, 218);
+    --cell-bg: white;
+}
+@media(prefers-color-scheme:dark) {
+    :root {
+        --color: white;
+        --bg-color: rgb(45, 45, 50);
+        --a-color: white;
+        --a-hover: rgb(189, 0, 76);
+        --bg-a-color: black;
+        --cell-border: black;
+        --cell-bg: hsla(242.49, 4.71%, 13.37%, 1);
+    }
+}
+body {
+    font-family: ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans","Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+    max-width: 800px;
+    font-size: 1em;
+    color: var(--color);
+    background-color: var(--bg-color);
+}
+a {
+    display: block;
+    background-color: var(--bg-a-color);
+    border-radius: 8px;
+    margin-top: 10px;
+    line-height: 100%;
+    padding: 10px;
+    color: var(--a-color);
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    background-color: var(--a-hover);
+}
+h1 {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    font-size: 1.5em;
+}
+h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.2em;
+}
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 140%;
+}
+input {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #f1f1f1 1px;
+}
+button {
+    display: block;
+    background-color: var(--bg-a-color);
+    border-radius: 8px;
+    margin-top: 10px;
+    line-height: 100%;
+    padding: 10px;
+    color: var(--a-color);
+    border: none;
+    font-size: 1.2em;
+}
+button:hover {
+    background-color: var(--a-hover);
+}
+
+.two-col {
+    display: flex;
+}
+.sidebar {
+    flex: 20%;
+    margin-right: 35px;
+}
+.wrapper {
+    flex: 80%;
+}
+.small {
+    font-size: 0.8em;
+}
+.cell {
+    display: flex;
+    margin-bottom: 35px;
+    padding: 20px;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--cell-border);
+    background-color: var(--cell-bg);
+    box-shadow: 6px 6px 6px -4px rgba(0, 0, 0, 0.12);
+}
+.thumbnail {
+    width:  100px;
+    border-radius: 4px;
+    transform: rotate(0deg);
+}
+.center {
+    display: grid;
+    place-content: center;
+}
+.card-content {
+    margin: -5px 5px 5px 15px;
+}
+.filter-button {
+    border: 3px rgba(0, 0, 0, 0) solid;
+}
+.riddle-text {
+    background-color: var(--cell-bg);
+    padding: 1em;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+.riddle-answer {
+    background-color: var(--a-hover);
+    padding: 1em;
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 400px) {
+    .thumbnail {
+      width: 15vw;
+    }
+    .wrapper {
+        padding: 0px;
+    }
+    .cell {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .sidebar {
+        display: none;
+    }
+    .blog-container {
+        padding: 1rem;
+    }
+    .cell {
+        border-radius: 0px;
+    }
+}
+    </style>
+</head>
+
+    <body>
+        <h1 class="center">KRIS SHAMLOO</h1>
+
+        <div class="two-col">
+            <div class="sidebar">
+                <a id="gamesButton" class="filter-button" href="javascript:toggle('games');">Games</a>
+                <a id="booksButton" class="filter-button" href="javascript:toggle('books');">Books</a>
+                <a id="podcastsButton" class="filter-button" href="javascript:toggle('podcasts');">Podcasts</a>
+                <a id="toolsButton" class="filter-button" href="javascript:toggle('tools');">Tools</a>
+            </div>
+            <div class="wrapper">
+            
+                <div class="cell booksCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/boarding_action200.png" alt="Space Marines: Boarding Action book cover.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Space Marines: Boarding Action</h2>
+                        <div class="small">2024 Short Story</div>
+                        
+                            <p>Three space marines board a derelict invasionship in a far corner of the galaxy.</p>
+                        
+                        
+                            <a href="https://books.apple.com/us/book/id6476448748" target="_blank" rel="noopener noreferrer ">📖 Get it on Apple Books</a>
+                        
+                            <a href="/static/books/boarding_action.epub"  rel="noopener noreferrer ">📖 Download ePub</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell toolsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/stopwatch200.png" alt="The Countdown Stopwatch icon, line art of a stopwatch on a green background.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Countdown Stopwatch</h2>
+                        <div class="small">2023 App</div>
+                        
+                            <p>A stopwatch application built for my fitness needs. Features a countdown start and measurement history.</p>
+                        
+                        
+                            <a href="https://apps.apple.com/us/app/countdown-stopwatch/id6446262141" target="_blank" rel="noopener noreferrer ">📲 Download on the App Store</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell gamesCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/smoldungeon180.png" alt="The Smol Dungeon icon, a red monster in a pixel art style.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Smol Dungeon</h2>
+                        <div class="small">2021 Game</div>
+                        
+                            <p>Enter the Smol Dungeon if you dare. You seek the noblest of treasures, The Chalice. But beware! There are dangerous monsters in this dark place. Navigate through the depths of the Smol Dungeon using your wits, traps, and teleporters. Mind the blood, lest you dirty your shoes.</p>
+                        
+                            <p>Smol Dungeon is a roguelike dungeon crawler with fun gameplay and 5-10 minute long runs.</p>
+                        
+                        
+                            <a href="https://smoldungeon.com" target="_blank" rel="noopener noreferrer ">👾 Play Smol Dungeon</a>
+                        
+                            <a href="https://apps.apple.com/us/app/smol-dungeon/id1601911735" target="_blank" rel="noopener noreferrer ">📲 Download on the App Store</a>
+                        
+                            <a href="https://krisshamloo.bandcamp.com/album/smol-dungeon-soundtrack-music-to-descend-to" target="_blank" rel="noopener noreferrer ">🎵 Listen to the album</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell toolsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/littlefish200.png" alt="The littlefish logo, a small purple fish saying 'high tech!'.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Littlefish</h2>
+                        <div class="small">2021 AI Project</div>
+                        
+                            <p>Use the Littlefish AI to analyze sequences of numbers and make predictions for what the next numbers might be.</p>
+                        
+                        
+                            <a href="/littlefish"  rel="noopener noreferrer ">🔮 Predict the future</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell toolsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/runtool200.png" alt="The runtool logo, a rough hand drawing of a man running. The man's head is a piece of toast.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Run Tool</h2>
+                        <div class="small">2020 Running Pace Calculator</div>
+                        
+                            <p>Convert running paces from miles to kilometers, show extrapolated paces for common events.</p>
+                        
+                        
+                            <a href="/runtool"  rel="noopener noreferrer ">🏃 Use Run Tool</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell booksCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/sissy200.png" alt="The cover of Sissy the Helper.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Sissy the Helper</h2>
+                        <div class="small">2020 Short Story</div>
+                        
+                            <p>A family accidentally lets a goblin housekeeper into their home.</p>
+                        
+                        
+                            <a href="https://books.apple.com/us/book/id1514877767" target="_blank" rel="noopener noreferrer ">📖 Get it on Apple Books</a>
+                        
+                            <a href="/static/books/sissy.epub"  rel="noopener noreferrer ">📖 Download ePub</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell gamesCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/littleriddle200.jpg" alt="The Little Riddle logo.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Little Riddle</h2>
+                        <div class="small">2019 Riddles</div>
+                        
+                            <p>A small collection of riddles for you to solve.</p>
+                        
+                        
+                            <a href="/littleriddle"  rel="noopener noreferrer ">🧩 Test your wit</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell booksCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/trollwitch200.jpg" alt="The cover of Troll Witch.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Troll Witch</h2>
+                        <div class="small">2019 Short Story</div>
+                        
+                            <p>A young girl ventures into a dangerous and magical forest where she encounters a fearsome troll witch.A young girl ventures into a dangerous and magical forest where she encounters a fearsome troll witch.</p>
+                        
+                        
+                            <a href="https://itunes.apple.com/us/book/troll-witch/id1448631583?ls=1&mt=11" target="_blank" rel="noopener noreferrer ">📖 Get it on Apple Books</a>
+                        
+                            <a href="/static/books/trollwitch.epub"  rel="noopener noreferrer ">📖 Download ePub</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell podcastsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/soggybottoms200.png" alt="The Soggy Bottoms logo, a cartoon cake with a surprised expression.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Soggy Bottoms</h2>
+                        <div class="small">2018 Podcast</div>
+                        
+                            <p>Carissa Fish and Kris Shamloo discuss season four of the Great British Baking Show. Note that we're going by how Netflix is counting seasons since that is how we were first exposed to the show. There are a lot of puns.</p>
+                        
+                        
+                            <a href="https://itunes.apple.com/us/podcast/soggy-bottoms/id1319623704?mt=2" target="_blank" rel="noopener noreferrer ">🎧 Listen on Apple Podcasts</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell podcastsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/dailystory2-200.jpg" alt="The Daily Story logo, the title text over a colorful bunch of flowers.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Daily Story</h2>
+                        <div class="small">2017 Podcast</div>
+                        
+                            <p>A short story every day, for one hundred days. Stories of various flavors, shapes, and sizes. Let's get lost together.</p>
+                        
+                        
+                            <a href="https://itunes.apple.com/us/podcast/daily-story/id1212062965?mt=2" target="_blank" rel="noopener noreferrer ">🎧 Listen on Apple Podcasts</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell podcastsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/itsasham.png" alt="The It's a Sham logo, a cartoon killer whale in a fish bowl.">
+                    </div>
+                    <div class="card-content">
+                        <h2>It's a Sham</h2>
+                        <div class="small">2016 Podcast</div>
+                        
+                            <p>Cousins Kris and Nina sit down to discuss the meaning of life, the pursuit of happiness, but end up talking about sandwiches. Do you know about dry shampoo?</p>
+                        
+                        
+                            <a href="https://itunes.apple.com/us/podcast/its-a-sham/id1067518725?mt=2" target="_blank" rel="noopener noreferrer ">🎧 Listen on Apple Podcasts</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell booksCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/fireprince200.jpg" alt="The cover of Fire Prince.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Fire Prince</h2>
+                        <div class="small">2012 Novel</div>
+                        
+                            <p>The story of Andin, the Fire Prince, who sets out on an adventure through the elemental planes, exploring the realm and fighting evil as he goes.</p>
+                        
+                        
+                            <a href="https://books.apple.com/us/book/fire-prince/id572340173" target="_blank" rel="noopener noreferrer ">📖 Get it on Apple Books</a>
+                        
+                            <a href="/static/books/fireprince.epub"  rel="noopener noreferrer ">📖 Download ePub</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell booksCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/blacktie200.jpg" alt="The cover of Black Tie.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Black Tie</h2>
+                        <div class="small">2011 Novel</div>
+                        
+                            <p>A man wakes up in a mysterious desert at the center of which lies the great obelisk. Within the obelisk lies the secret of his strange world.</p>
+                        
+                        
+                            <a href="https://books.apple.com/us/book/black-tie/id471785165" target="_blank" rel="noopener noreferrer ">📖 Get it on Apple Books</a>
+                        
+                            <a href="/static/books/blacktie.epub"  rel="noopener noreferrer ">📖 Download ePub</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell booksCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/trapped200.jpg" alt="The cover of Trapped.">
+                    </div>
+                    <div class="card-content">
+                        <h2>Trapped</h2>
+                        <div class="small">2010 Short Story</div>
+                        
+                            <p>This room is your home. You've known nothing else but you know everything else.</p>
+                        
+                        
+                            <a href="https://books.apple.com/us/book/trapped/id1253202445" target="_blank" rel="noopener noreferrer ">📖 Get it on Apple Books</a>
+                        
+                            <a href="/static/books/trapped.epub"  rel="noopener noreferrer ">📖 Download ePub</a>
+                        
+                    </div>
+                </div>
+            
+                <div class="cell toolsCategory">
+                    <div>
+                        <img class="thumbnail" src="/assets/images/kris250.jpg" alt="An image of Kris.">
+                    </div>
+                    <div class="card-content">
+                        <h2>About Kris</h2>
+                        <div class="small"></div>
+                        
+                            <p>Always noodling on projects. Software at Apple. Formerly at Google and Addgene.</p>
+                        
+                        
+                            <a href="https://x.com/krisshamloo" target="_blank" rel="noopener noreferrer ">🐦 Say hi on X (Twitter)</a>
+                        
+                            <a href="https://hachyderm.io/@shamloo" target="_blank" rel="noopener noreferrer me">🦣 Say hi on Mastodon</a>
+                        
+                            <a href="https://youtube.com/krisshamloo" target="_blank" rel="noopener noreferrer ">🎥 Watch videos on YouTube</a>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </body>
+<script type="text/javascript">
+
+var lastChoice = '';
+
+var categories = {
+    games: document.getElementsByClassName("gamesCategory"),
+    books: document.getElementsByClassName("booksCategory"),
+    podcasts: document.getElementsByClassName("podcastsCategory"),
+    tools: document.getElementsByClassName("toolsCategory"),
+};
+
+var filterButtons = {
+    games: document.getElementById("gamesButton"),
+    books: document.getElementById("booksButton"),
+    podcasts: document.getElementById("podcastsButton"),
+    tools: document.getElementById("toolsButton"),
+}
+
+function reset() {
+    lastChoice = '';
+    for (const [_, value] of Object.entries(categories)) {
+        for (let cell of value) {
+            cell.style.display = '';
+        }
+    }
+    for (const [key, value] of Object.entries(filterButtons)) {
+        value.style.border = '3px rgba(0, 0, 0, 0) solid';
+    }
+}
+
+function toggle(category) {
+    if (category === lastChoice) {
+        reset();
+        return
+    }
+
+    for (const [key, value] of Object.entries(categories)) {
+        if (key === category) {
+            console.log('showing', key);
+            for (let cell of value) {
+                cell.style.display = '';
+            }
+        } else {
+            console.log('hiding', key);
+            for (let cell of value) {
+                cell.style.display = 'none';
+            }
+        }
+    }
+
+    for (const [key, value] of Object.entries(filterButtons)) {
+        if (key === category) {
+            value.style.border = '3px deeppink solid';
+        } else {
+            value.style.border = '3px rgba(0, 0, 0, 0) solid';
+        }
+    }
+
+    lastChoice = category;
+}
+
+</script>
+</html>
